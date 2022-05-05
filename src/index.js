@@ -3,13 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const ListTitle = () => {
+const body = document.querySelector('body');
+const DARKTHEMECLASS = 'dark';
+
+function switchTheme(e) {
+	if(e.target.checked) {
+		body.classList.add(DARKTHEMECLASS);
+	} else {
+		body.classList.remove(DARKTHEMECLASS);
+	}
+}
+
+function ListTitle() {
 	return React.createElement(
-	"h1", {style: { color: '#999', fontSize: '19px'}},
-	"Solar system planets:"
+	'h1', {style: { color: '#999', fontSize: '19px'}},
+	'Solar system planets:'
 	)
 }
-const ListOfPlanets = () => {
+function ListOfPlanets() {
 	return (
 	<ul className='planets-list'>
 		<li>Mercury</li>
@@ -24,11 +35,22 @@ const ListOfPlanets = () => {
 	</ul>
 	)
 }
-const SolarSystem = () => {
+
+function Slider() {
+	return (
+		<label className='switch' htmlFor='checkbox'>
+    	<input type='checkbox' id='checkbox' onClick={switchTheme} />
+    	<div className='slider round'></div>
+	</label>
+	)
+}
+
+function SolarSystem() {
 	return (
 		<>
 		<ListTitle></ListTitle>
 		<ListOfPlanets></ListOfPlanets>
+		<Slider></Slider>
 		</>
 	)
 }
