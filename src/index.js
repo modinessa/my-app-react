@@ -1,17 +1,36 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const ListTitle = () => {
+	return React.createElement(
+	"h1", {style: { color: '#999', fontSize: '19px'}},
+	"Solar system planets:"
+	)
+}
+const ListOfPlanets = () => {
+	return (
+	<ul className='planets-list'>
+		<li>Mercury</li>
+		<li>Venus</li>
+		<li>Earth</li>
+		<li>Earth</li>
+		<li>Mars</li>
+		<li>Jupiter</li>
+		<li>Saturn</li>
+		<li>Uranus</li>
+		<li>Neptune</li>
+	</ul>
+	)
+}
+const SolarSystem = () => {
+	return (
+		<>
+		<ListTitle></ListTitle>
+		<ListOfPlanets></ListOfPlanets>
+		</>
+	)
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+root.render(SolarSystem());
