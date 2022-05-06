@@ -20,6 +20,7 @@ function ListTitle() {
 	'Solar system planets:'
 	)
 }
+
 function ListOfPlanets() {
 	return (
 	<ul className='planets-list'>
@@ -48,9 +49,9 @@ function Slider() {
 function SolarSystem() {
 	return (
 		<>
-		<ListTitle></ListTitle>
-		<ListOfPlanets></ListOfPlanets>
-		<Slider></Slider>
+		<ListTitle/>
+		<ListOfPlanets/>
+		<Slider/>
 		</>
 	)
 }
